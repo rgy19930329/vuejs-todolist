@@ -7,7 +7,7 @@ export default {
   	name: 'my-footer',
   	data () {
     	return {
-      		msg: 'this is my todolist made of vue.js'
+      	msg: 'this is my todolist made of vue.js'
     	}
   	}
 }
@@ -16,8 +16,8 @@ export default {
 <style scoped>
 p {
 	border-top: 1px solid #ccc;
-  	text-align: center;
-  	color: #ccc;
-    padding-top: 12px;
+	text-align: center;
+	color: #ccc;
+  padding-top: 12px;
 }
 </style>

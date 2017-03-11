@@ -1,8 +1,8 @@
 <template>
   <common>
-	  <div id="about">
-	    this is todolist about!
-	  </div>
+    <div id="about">
+      this is todolist about!
+    </div>
   </common>
 </template>
 

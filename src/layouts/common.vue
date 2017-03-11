@@ -1,30 +1,46 @@
 <template>
-  <div class="common-container">
-    <ul>
-      <li>
-        <v-link href="/">Home</v-link>
-        <v-link href="/history">History</v-link>
-        <v-link href="/about">About</v-link>
-      </li>
-    </ul>
-
-    <slot></slot>
+  <div class="wrap">
+    <common>
+      <my-header></my-header>
+      <slot></slot>
+    </common>
   </div>
 </template>
 
 <script>
-  import VLink from '../components/VLink.vue'
+import MyHeader from '../components/MyHeader';
 
-  export default {
-    components: {
-      VLink
-    }
+export default {
+  components: {
+    MyHeader
   }
+}
 </script>
 
 <style>
 body {
   font-family: "Microsoft yahei";
+}
+li {
+  list-style: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+  font-family: "Microsoft yahei";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  color: #2c3e50;
+  width: 100%;
+  box-sizing: border-box;
+}
+.wrap {
+  width: 300px;
+  margin: 0 auto;
 }
 .common-container {
   width: 300px;

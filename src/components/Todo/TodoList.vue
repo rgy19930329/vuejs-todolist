@@ -5,9 +5,9 @@
 	</div>
 	<ul>
 		<li v-for="(item, index) in list">
-            <span>{{ item }}</span>
-            <i class="icon-del" v-on:click="del(index)">x</i>
-        </li>
+      <span>{{ item }}</span>
+      <i class="icon-del" v-on:click="del(index)">x</i>
+    </li>
 	</ul>
   </div>
 
@@ -30,23 +30,23 @@ $.ajax({
 });
 
 var data = {
-    message: '',
+  message: '',
 	list: ['111', '222', '333']
 };
 export default {
-  	name: 'todo-list',
-  	data () {
-    	return data;
-  	},
-    methods: {
-        add: function() {
-            data.list.unshift(data.message);
-            data.message = '';
-        },
-        del: function(index) {
-            data.list.splice(index, 1);
-        }
+	name: 'todo-list',
+	data () {
+  	return data;
+	},
+  methods: {
+    add: function() {
+      data.list.unshift(data.message);
+      data.message = '';
+    },
+    del: function(index) {
+      data.list.splice(index, 1);
     }
+  }
 }
 </script>
 
