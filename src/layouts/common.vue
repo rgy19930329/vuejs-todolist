@@ -1,9 +1,7 @@
 <template>
   <div class="wrap">
-    <common>
-      <my-header></my-header>
-      <slot></slot>
-    </common>
+    <my-header></my-header>
+    <slot></slot>
   </div>
 </template>
 
