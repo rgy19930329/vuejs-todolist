@@ -1,7 +1,10 @@
 <template>
   <common>
     <div id="about">
-      this is todolist about!
+      this is demo about!
+      <ul>
+        <li><router-link to="/demo1">demo1</router-link></li>
+      </ul>
     </div>
   </common>
 </template>

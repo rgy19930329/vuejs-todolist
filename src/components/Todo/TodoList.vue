@@ -6,7 +6,7 @@
   	<ul>
   		<li v-for="(item, index) in list">
         <span>{{ item }}</span>
-        <i class="icon-del" v-on:click="del(index)">x</i>
+        <i class="icon-del" v-on:click="del(index)">&times;</i>
       </li>
   	</ul>
   </div>
@@ -18,17 +18,21 @@ export default {
 	name: 'todo-list',
 	data () {
   	return {
+      url: this.$store.getters.baseURI,
       message: '',
-      list: ['111', '222', '333']
+      list: ['111', '222', '333'],
     };
 	},
   // computed: {
   //   reversedMsg() {
   //     return this.message.split('').reverse().join('');
+  //   },
+  //   baseURI() {
+  //     return this.$store.getters.baseURI;
   //   }
   // },
   created() {
-    this.$http.get('http://web.mock.apidev.com/web/api/books.php')
+    this.$http.get(this.url + '/web/api/books.php')
     .then(function(res) {
       this.list = res.body.list;
     }, function(e) {
@@ -52,14 +56,6 @@ export default {
 <style scoped>
 .wrap {
 	box-shadow: 0 0 0 #888;
-}
-input {
-	box-sizing: border-box;
-  font-size: 18px;
-	padding: 3px;
-	font-family: "Microsoft yahei";
-	display: block;
-	width: 100%;
 }
 ul {
   padding-top: 10px;
@@ -98,6 +94,5 @@ li span {
   border-radius: 50%;
   border: 1px solid #ccc;
   color: #aaa;
-  margin-top: 6px;
 }
 </style>

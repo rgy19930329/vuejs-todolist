@@ -2,15 +2,21 @@
   <div class="wrap">
     <my-header></my-header>
     <slot></slot>
+    <tips></tips>
+    <loading></loading>
   </div>
 </template>
 
 <script>
 import MyHeader from '../components/MyHeader';
+import Tips from '../components/Tips';
+import Loading from '../components/Loading';
 
 export default {
   components: {
-    MyHeader
+    MyHeader,
+    Tips,
+    Loading,
   }
 }
 </script>
@@ -45,28 +51,22 @@ li {
   margin: 0 auto;
   padding: 10px;
 }
-</style>
-
-<style scoped>
-ul {
-  margin-bottom: 20px;
-  text-align: center;
+input {
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 3px;
+  font-family: "Microsoft yahei";
+  display: block;
+  width: 100%;
 }
-li {
-  display: flex;
+.btn {
+  width: 100%;
+  line-height: 28px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
-a {
-  text-decoration: none;
-  color: cornflowerblue;
-  flex: 1;
-}
-a {
-  border-left: 1px solid #ddd;
-}
-a:nth-child(1) {
-  border-left: none;
-}
-a:hover {
-  color: #59f;
+.btn:hover {
+  background: #eee;
 }
 </style>

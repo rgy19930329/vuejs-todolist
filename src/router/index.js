@@ -4,6 +4,7 @@ import App from '../pages/App';
 import About from '../pages/About';
 import Todo from '../pages/Todo';
 import NotFoundPage from '../pages/404';
+import Demo1 from '../pages/Demo1';
 
 Vue.use(Router);
 
@@ -27,6 +28,10 @@ export default new Router({
     {
       path: '/history',
       component: NotFoundPage,
+    },
+    {
+      path: '/demo1',
+      component: Demo1,
     }
   ]
 });
