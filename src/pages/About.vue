@@ -4,6 +4,7 @@
       this is demo about!
       <ul>
         <li><router-link to="/demo1">demo1</router-link></li>
+        <li><router-link to="/demo2">demo2</router-link></li>
       </ul>
     </div>
   </common>
