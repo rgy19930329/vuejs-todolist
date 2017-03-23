@@ -1,5 +1,5 @@
 <template>
-  <common>
+  <div>
     <div>
       <h3>双向绑定 + 父子组件 + vuex(store)</h3>
       <div>
@@ -12,11 +12,10 @@
       <button v-on:click="pressError" class="btn">tip error</button>
       <button v-on:click="pressLoading" class="btn">tip loading</button>
     </div>
-  </common>
+  </div>
 </template>
 
 <script>
-import common from '../layouts/common';
 import child from '../components/demo/child';
 
 export default {
@@ -26,7 +25,6 @@ export default {
     }
   },
   components: {
-    common,
     child,
   },
   methods: {

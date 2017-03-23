@@ -2,9 +2,9 @@
   <div class="common-container">
     <ul>
       <li>
-        <router-link to="/">Home</router-link>
-        <router-link to="/history">History</router-link>
-        <router-link to="/about">about</router-link>
+        <router-link to="/" v-bind:class="{active: homef}">Home</router-link>
+        <router-link to="/history" v-bind:class="{active: historyf}">History</router-link>
+        <router-link to="/demos" v-bind:class="{active: demosf}">Demos</router-link>
       </li>
     </ul>
   </div>
@@ -13,9 +13,15 @@
 <script>
 export default {
   name: 'my-header',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  computed: {
+    homef() {
+      return '/' == this.$route.path;
+    },
+    historyf() {
+      return '/history' == this.$route.path;
+    },
+    demosf() {
+      return !!this.$route.path.match(/\/demos/);
     }
   }
 }
@@ -43,5 +49,10 @@ a:nth-child(1) {
 a:hover {
   color: #59f;
 }
-
+.active {
+  color: #de1b46;
+}
+.active:hover {
+  color: #c3183e;
+}
 </style>

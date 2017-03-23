@@ -1,11 +1,12 @@
 <template>
   <common>
-    <div id="about">
-      this is demo about!
+    <div id="demos">
+      <h3>demos</h3>
       <ul>
-        <li><router-link to="/demo1">demo1</router-link></li>
-        <li><router-link to="/demo2">demo2</router-link></li>
+        <li><router-link to="/demos/demo1">demo1</router-link></li>
+        <li><router-link to="/demos/demo2">demo2</router-link></li>
       </ul>
+      <router-view></router-view>
     </div>
   </common>
 </template>
@@ -21,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-div {
+h3, ul {
 	text-align: center;
 }
 </style>

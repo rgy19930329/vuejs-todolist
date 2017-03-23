@@ -1,5 +1,5 @@
 <template>
-  <common>
+  <div>
     <div>
       <h3>过渡效果(transition)</h3>
     </div>
@@ -28,16 +28,14 @@
       <h3 v-if="show3">hello</h3>
     </transition>
 
-  </common>
+  </div>
 </template>
 
 <script>
-import common from '../layouts/common';
 import child from '../components/demo/child';
 
 export default {
   components: {
-    common,
     child,
   },
   data() {
