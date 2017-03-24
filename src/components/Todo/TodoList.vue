@@ -9,11 +9,25 @@
         <i class="icon-del" v-on:click="del(index)">&times;</i>
       </li>
   	</ul>
+    <p>{{getItems}}</p>
+    <ul>
+      <li v-for="item in items">
+        {{item}}
+      </li>
+    </ul>
   </div>
 
 </template>
 
 <script>
+import wilddog from 'wilddog';
+
+var config = {
+  syncURL: 'https://kylin.wilddogio.com',
+};
+wilddog.initializeApp(config);
+var itemsRef = wilddog.sync().ref('vuelist');
+
 export default {
 	name: 'todo-list',
 	data () {
@@ -31,17 +45,29 @@ export default {
   //     return this.$store.getters.baseURI;
   //   }
   // },
-  created() {
-    this.$http.get(this.url + '/web/api/books.php')
-    .then(function(res) {
-      this.list = res.body.list;
-    }, function(e) {
-      console.log(e);
-    });
+  // created() {
+  //   this.$http.get(this.url + '/web/api/books.php')
+  //   .then(function(res) {
+  //     this.list = res.body.list;
+  //   }, function(e) {
+  //     console.log(e);
+  //   });
+  // },
+  wilddog: {
+    items: itemsRef.limitToLast(25)
+  },
+  computed: {
+    getItems() {
+      console.log(this.items);
+      return this.items;
+    }
   },
   methods: {
     add() {
       if(this.message) {
+        itemsRef.push({
+          text: this.message
+        });
         this.list.unshift(this.message);
         this.message = '';
       }
@@ -94,5 +120,7 @@ li span {
   border-radius: 50%;
   border: 1px solid #ccc;
   color: #aaa;
+  position: relative;
+  top: 5px;
 }
 </style>
