@@ -4,17 +4,11 @@
   	  <input type="text" v-model="message" v-on:keyup.enter="add">
   	</div>
   	<ul>
-  		<li v-for="(item, index) in list">
-        <span>{{ item }}</span>
-        <i class="icon-del" v-on:click="del(index)">&times;</i>
+  		<li v-for="item in items">
+        <span>{{ item.text }}</span>
+        <i class="icon-del" v-on:click="del(item['.key'])">&times;</i>
       </li>
   	</ul>
-    <p>{{getItems}}</p>
-    <ul>
-      <li v-for="item in items">
-        {{item}}
-      </li>
-    </ul>
   </div>
 
 </template>
@@ -34,33 +28,10 @@ export default {
   	return {
       url: this.$store.getters.baseURI,
       message: '',
-      list: ['111', '222', '333'],
     };
 	},
-  // computed: {
-  //   reversedMsg() {
-  //     return this.message.split('').reverse().join('');
-  //   },
-  //   baseURI() {
-  //     return this.$store.getters.baseURI;
-  //   }
-  // },
-  // created() {
-  //   this.$http.get(this.url + '/web/api/books.php')
-  //   .then(function(res) {
-  //     this.list = res.body.list;
-  //   }, function(e) {
-  //     console.log(e);
-  //   });
-  // },
   wilddog: {
     items: itemsRef.limitToLast(25)
-  },
-  computed: {
-    getItems() {
-      console.log(this.items);
-      return this.items;
-    }
   },
   methods: {
     add() {
@@ -68,12 +39,11 @@ export default {
         itemsRef.push({
           text: this.message
         });
-        this.list.unshift(this.message);
         this.message = '';
       }
     },
-    del(index) {
-      this.list.splice(index, 1);
+    del(key) {
+      itemsRef.child(key).remove();
     }
   }
 }
