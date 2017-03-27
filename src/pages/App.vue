@@ -23,6 +23,7 @@ export default {
         '/demos': 'demos',
         '/demos/demo1': 'demo1',
         '/demos/demo2': 'demo2',
+        '/demos/demo3': 'demo3',
       }
     }
   },

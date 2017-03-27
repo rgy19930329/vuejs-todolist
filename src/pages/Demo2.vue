@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h3>过渡效果(transition)</h3>
+      <h3>[demo2] 过渡效果(transition)</h3>
     </div>
     <div class="handle-panel">
       <button v-on:click="makeFade" class="btn">toggle</button>
@@ -32,12 +32,7 @@
 </template>
 
 <script>
-import child from '../components/demo/child';
-
 export default {
-  components: {
-    child,
-  },
   data() {
     return {
       show: false,

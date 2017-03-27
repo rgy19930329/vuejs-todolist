@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h3>双向绑定 + 父子组件 + vuex(store)</h3>
+      <h3>[demo1] 双向绑定 + 父子组件 + vuex(store)</h3>
       <div>
         <input v-model="pMsg">
       </div>

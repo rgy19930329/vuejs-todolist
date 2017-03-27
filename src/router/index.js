@@ -6,6 +6,7 @@ import Todo from '../pages/Todo';
 import NotFoundPage from '../pages/404';
 import Demo1 from '../pages/Demo1';
 import Demo2 from '../pages/Demo2';
+import Demo3 from '../pages/Demo3';
 
 Vue.use(Router);
 
@@ -31,6 +32,10 @@ export default new Router({
         {
           path: '/demos/demo2',
           component: Demo2,
+        },
+        {
+          path: '/demos/demo3',
+          component: Demo3,
         },
       ]
     },
